@@ -1,10 +1,11 @@
 import { FC } from 'react';
+import WebHeader from '../components/WebHeader';
 
 export const HomePage: FC = (): JSX.Element => {
 
   return (
     <div className="">
-      123
+      <WebHeader></WebHeader>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HomePage } from './pages/HomePage';
 import { StorePage } from './pages/StorePage';
 
-import './index.scss';
+import './index.less';
 
 export const App: FC = (): JSX.Element =>
   <Router>
