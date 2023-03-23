@@ -1,0 +1,62 @@
+.backgroundAnimation{
+  width: 100%;
+  position: relative;
+  aspect-ratio: 1.92/1;
+  cursor: pointer;
+  background: radial-gradient(46.11% 56.41% at 50% 43.59%, rgba(25, 239, 253, 0.6) 0%, rgba(73, 175, 254, 0.24) 33.46%, rgba(151, 71, 255, 0.32) 47.27%, rgba(0, 0, 0, 0.26) 75.85%, rgba(0, 0, 0, 0.760321) 87.32%, #000000 100%), #000000;
+}
+.frame {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  align-items: flex-start;
+}
+
+.icon1_box {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 60%;
+  transform: translateX(-50%);
+  height: 332px;
+  overflow: visible;
+}
+.icon1 {
+  width: 100%;
+  height: 100%;
+}
+.icon2_box {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 30%;
+  height: 999px;
+  overflow: visible;
+}
+.icon2 {
+  width: 100%;
+  height: 100%;
+}
+.icon3_box {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-100%);
+  width: 30%;
+  height: 999px;
+  overflow: visible;
+}
+.icon3 {
+  width: 100%;
+  height: 100%;
+}
+/* 826 715 */
+.wallpapersden {
+  background-image: url('../../assets/wallpapersden2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-mask-image: url('../../assets/svg/frame12.svg');
+  mask-image: url('../../assets/svg/frame12.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}

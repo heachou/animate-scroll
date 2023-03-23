@@ -10,6 +10,7 @@
   "dependencies": {
     "@react-rxjs/core": "^0.10.3",
     "@react-rxjs/utils": "^0.9.5",
+    "ahooks": "^3.7.5",
     "flowbite": "^1.5.3",
     "flowbite-react": "^0.1.11",
     "less": "^4.1.3",

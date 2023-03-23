@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 import { HomePage } from './pages/HomePage';
-import { StorePage } from './pages/StorePage';
 
-import './index.less';
+import './global.less';
+import About from './pages/about';
+import Contact from './pages/contact';
+import Service from './pages/service';
 
 export const App: FC = (): JSX.Element =>
   <Router>
@@ -14,6 +16,8 @@ export const App: FC = (): JSX.Element =>
 
 const Routing: FC = (): JSX.Element =>
   <Routes>
-    <Route path="/store" element={<StorePage />} />
+    <Route path='/service' element={<Service />}/>
+    <Route path='/contact' element={<Contact />}/>
+    <Route path='/about' element={<About />}/>
     <Route path="/" element={<HomePage />} />
   </Routes>;
