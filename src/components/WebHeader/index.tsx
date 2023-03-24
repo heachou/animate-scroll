@@ -4,7 +4,7 @@ import headerLogo from "../../assets/header-logo.png"
 import "./style.less"  
 
 const Links = [
-  { name: 'Home', path: '/' },
+  { name: 'Home', path: '/home' },
   { name: 'About Us', path: '/about' },
   { name: 'Services', path: '/service' },
   { name: 'Contact Us', path: '/contact' },
