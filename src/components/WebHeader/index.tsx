@@ -53,7 +53,7 @@ const WebHeader = ({className}:{className?:string}) => {
       </div>
     </div>
     {/* mobile menu */}
-    <div className="hidden absolute left-0 bg-black w-full" ref={menuRef}>
+    <div className="hidden absolute z-10 left-0 bg-black w-full" ref={menuRef}>
         <ul className="flex flex-col p-4">
           {
             Links.map((link, index) => {
