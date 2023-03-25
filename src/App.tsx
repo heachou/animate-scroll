@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HomePage } from './pages/HomePage';
-
+import "animate.css/animate.min.css";
 import './global.less';
-import About from './pages/about';
-import Contact from './pages/contact';
-import Service from './pages/service';
+import About from './pages/About/about';
+import Contact from './pages/Contact/contact';
+import Service from './pages/service/service';
 
 export const App: FC = (): JSX.Element =>
   <Router>

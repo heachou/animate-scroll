@@ -1,30 +1,96 @@
 @media (min-width: 1920px) {
   .container {
-    max-width: 1920px!important;
+    max-width: 1920px !important;
   }
 }
+
 .text-shadow-3xl {
   text-shadow: 2px 4px 10px rgb(0 0 0 / 40%), 7px 6px 20px rgb(73 64 125 / 50%);
 }
-// 首页
-.home_page {
-  // .content_wrap {
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: flex-start;
-  //   // background: radial-gradient(46.11% 56.41% at 50% 43.59%, rgba(25, 239, 253, 0.6) 0%, rgba(73, 175, 254, 0.24) 33.46%, rgba(151, 71, 255, 0.32) 47.27%, rgba(0, 0, 0, 0.26) 75.85%, rgba(0, 0, 0, 0.760321) 87.32%, #000000 100%), #000000;
-  // }
-}
 
-.about_page{
-  .banner_box{
+// 首页
+.home_page {}
+
+.about_page {
+  .banner_box {
     width: 100%;
     aspect-ratio: 16/9;
-    background: url('./assets/planet-2.png') no-repeat center center;
+    background: url('./assets/planet-2.png') no-repeat center 0;
     background-size: cover;
   }
-  .galaxy{
+
+  .galaxy {
     width: 100%;
-    background: url('./assets/galaxy-2.png') no-repeat 0 0;
+    background: url('./assets/galaxy-2.png') no-repeat center 0;
+  }
+}
+
+// services page
+.service_page {
+  background: black;
+  min-height: 100vh;
+
+  .service_content {
+    background: black url('./assets/svg/service-bg-active.svg') no-repeat center center;
+    background-size: cover;
+    animation: 1s infinite alternate pulsebg;
+  }
+
+  .design,
+  .deploy,
+  .develop {
+    position: relative;
+    width: 100%;
+    height: 146px;
+  }
+  .design {
+    span {
+      background: url('./assets/svg/design.svg') no-repeat;
+      transition: opacity 0.4s ease;
+    }
+  }
+  .develop{
+    margin-left: 30%;
+    span {
+      background: url('./assets/svg/develop.svg') no-repeat;
+    }
+  }
+  .deploy {
+    margin-left: 50%;
+    span {
+      background: url('./assets/svg/deploy.svg') no-repeat;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .contact_content {
+    aspect-ratio: 16/9;
+  }
+}
+.contact_page{
+  background: black;
+  min-height: 100vh;
+  .contact_content{
+    width: 100%;
+    user-select: none;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #000000;
+    
+  }
+  .logo_box{
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(46.51% 21.7% at 50% 66.25%, rgba(255, 255, 255, 0.42) 13.11%, rgba(25, 239, 253, 0.16) 38.54%, rgba(151, 71, 255, 0.15) 67.85%, rgba(255, 255, 255, 0) 100%);
+  }
+}
+
+@keyframes pulsebg {
+  from {
+    background: black url('./assets/svg/service-bg-active.svg') no-repeat center center;
+    background-size: cover;
+  }
+
+  to {
+    background: black url('./assets/svg/service-bg.svg') no-repeat center center;
+    background-size: cover;
   }
 }

@@ -13,8 +13,8 @@ const Logo = () => {
   </NavLink>
 }
 
-const WebFooter = () => {
-  return <footer className="px-2 md:px-4 py-5 bg-black relative">
+const WebFooter = ({className}:{className?:string}) => {
+  return <footer className={`px-2 md:px-4 py-5 bg-black relative ${className}`}>
     <div className="container flex flex-col md:block mx-auto">
       <div className="mx-auto">
         <Logo></Logo>

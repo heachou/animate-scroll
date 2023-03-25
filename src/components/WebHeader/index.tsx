@@ -21,14 +21,14 @@ const Logo = () => {
 </NavLink>
 }
 
-const WebHeader = () => {
+const WebHeader = ({className}:{className?:string}) => {
   const menuRef = useRef<any>()
 
   const toggleMenu = () => {
     menuRef.current.classList.toggle('hidden')
   }
 
-  return <nav className="px-2 md:px-4 py-2.5 bg-black relative">
+  return <nav className={`px-2 md:px-4 py-2.5 bg-black relative ${className}`}>
     <div className="container flex flex-wrap items-center justify-between mx-auto">
       <Logo />
       <button type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden" onClick={toggleMenu}>

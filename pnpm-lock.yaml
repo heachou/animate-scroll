@@ -9,12 +9,14 @@ specifiers:
   '@types/react-dom': ^18.0.6
   '@vitejs/plugin-react': ^2.1.0
   ahooks: ^3.7.5
+  animate.css: ^4.1.1
   autoprefixer: ^10.4.12
   flowbite: ^1.5.3
   flowbite-react: ^0.1.11
   less: ^4.1.3
   postcss: ^8.4.16
   react: ^18.2.0
+  react-animation-on-scroll: ^5.1.0
   react-awesome-reveal: 4.2.3
   react-dom: ^18.2.0
   react-router: ^6.9.0
@@ -32,10 +34,12 @@ dependencies:
   '@react-rxjs/core': 0.10.3_react@18.2.0+rxjs@7.5.7
   '@react-rxjs/utils': 0.9.5_huhahxrznniymw3vi46m2vbrla
   ahooks: 3.7.5_react@18.2.0
+  animate.css: 4.1.1
   flowbite: 1.5.3
   flowbite-react: 0.1.11_dpyaei4r4vk3q7h3smrgyi6rla
   less: 4.1.3
   react: 18.2.0
+  react-animation-on-scroll: 5.1.0_react@18.2.0
   react-awesome-reveal: 4.2.3_3og6jmu6wvzuytygvdoxepq3x4
   react-dom: 18.2.0_react@18.2.0
   react-router: 6.9.0_react@18.2.0
@@ -801,6 +805,10 @@ packages:
       uri-js: 4.4.1
     dev: false
     optional: true
+
+  /animate.css/4.1.1:
+    resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
+    dev: false
 
   /ansi-escapes/4.3.2:
     resolution: {integrity: sha512-gKXj5ALrKWQLsYG9jlTRmR/xKluxHV+Z9QEwNIgCfM1/uwPMCuzVVnh5mwTd+OuBZcwSIMbqssNWRm1lE51QaQ==}
@@ -1931,6 +1939,10 @@ packages:
     dev: false
     optional: true
 
+  /lodash.throttle/4.1.1:
+    resolution: {integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==}
+    dev: false
+
   /lodash.uniq/4.5.0:
     resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}
     dev: false
@@ -2238,6 +2250,15 @@ packages:
   /quick-lru/5.1.1:
     resolution: {integrity: sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==}
     engines: {node: '>=10'}
+
+  /react-animation-on-scroll/5.1.0_react@18.2.0:
+    resolution: {integrity: sha512-UBhlXUig+AGwDpRoqFC6qFh1mCIperwy1Pk7dJTb0XgpDzERF4f6fhoqFY2+on9Bf1n4OfUrRw4xsnKfQt6U7w==}
+    peerDependencies:
+      react: '>= 15.4.1'
+    dependencies:
+      lodash.throttle: 4.1.1
+      react: 18.2.0
+    dev: false
 
   /react-awesome-reveal/4.2.3_3og6jmu6wvzuytygvdoxepq3x4:
     resolution: {integrity: sha512-wln5oVUw8qBTF0flLyHxbcDsM+fpYvcQZ0aih9YL1aK1CiVewEp7D/ltCsQ8lKQEsZ50udvmje4HPKxyiUDp8Q==}
