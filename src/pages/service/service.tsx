@@ -42,7 +42,7 @@ const Service = () => {
                 <Box
                   style={{
                     padding: '50px 15px',
-                    background: 'rgba(0, 0, 0, 0.75)'
+                    background: 'rgba(0, 0, 0, 0.5)'
                   }}
                 >
                   <div className="text-2xl text-white">{serviceBannerContent.title}</div>
@@ -69,7 +69,7 @@ const Service = () => {
               <div className="px-3 md:px-0 grid grid-cols-2 md:grid-cols-3 gap-x-[10px] md:gap-x-28 gap-y-5 md:gap-y-12">
                 {
                   serviceGrids.map((item, index) => {
-                    return <div className="flex flex-col justify-center py-5 md:py-28 text-fff px-5 border border-[#19EFFD] bg-black bg-opacity-60 border-[5px] hover:bg-fff hover:border-fff hover:text-black hover:bg-fff hover:bg-opacity-100 rounded-[25px] transition-colors" key={index}>
+                    return <div className="flex flex-col justify-center py-5 md:py-28 text-fff px-5 border border-[#19EFFD] bg-black bg-opacity-50 border-[5px] hover:bg-fff hover:border-fff hover:text-black hover:bg-fff hover:bg-opacity-100 rounded-[25px] transition-colors" key={index}>
                       <div className="font-bold text-xl md:text-4xl mb-5">{item.title}</div>
                       <div className="text-xl md:text-2xl">{item.text}</div>
                     </div>
@@ -125,7 +125,7 @@ const Service = () => {
                 <Box
                   style={{
                     padding: '50px 20px',
-                    background: 'rgba(0, 0, 0, 0.75)'
+                    background: 'rgba(0, 0, 0, 0.5)'
                   }}
                 >
                   <div className="text-4xl text-white font-bold">{oneStop.title}</div>
