@@ -7,3 +7,12 @@
 .menu_wrap{
   @apply absolute left-0 z-10 bg-black md:relative md:left-0 md:bottom-0 w-full md:block md:w-auto;
 }
+.mobile_menu{
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+.mobile_menu.active{
+  height: 229px;
+}

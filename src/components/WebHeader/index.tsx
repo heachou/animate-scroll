@@ -25,7 +25,7 @@ const WebHeader = ({className}:{className?:string}) => {
   const menuRef = useRef<any>()
 
   const toggleMenu = () => {
-    menuRef.current.classList.toggle('hidden')
+    menuRef.current.classList.toggle('active')
   }
 
   return <nav className={`px-2 md:px-4 py-2.5 bg-black relative ${className}`}>
@@ -53,7 +53,7 @@ const WebHeader = ({className}:{className?:string}) => {
       </div>
     </div>
     {/* mobile menu */}
-    <div className="hidden absolute z-10 left-0 bg-black w-full" ref={menuRef}>
+    <div className="mobile_menu md:hidden absolute z-10 left-0 bg-black w-full" ref={menuRef}>
         <ul className="flex flex-col p-4">
           {
             Links.map((link, index) => {
