@@ -3,7 +3,7 @@ import WebHeader from "../../components/WebHeader"
 import { CSSProperties, ReactNode, useEffect, useState } from "react";
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { oneStop, serviceBannerContent, serviceGrids } from "./data"
-import vincentPng from "../../assets/vincent.png"
+import vincentPng from "/vincent.png"
 
 
 
@@ -98,7 +98,7 @@ const Service = () => {
                       })
                     }
                   </div>
-                  <div className="develop">
+                  <div className="develop ml-0 2xl:ml-[16%]">
                   {
                       Array.from({ length: 8 }).map((_, index) => {
                         return <span style={{
@@ -108,7 +108,7 @@ const Service = () => {
                       })
                     }
                   </div>
-                  <div className="deploy">
+                  <div className="deploy ml-0 lg:ml-[5%] 2xl:ml-[33%]">
                   {
                       Array.from({ length: 8 }).map((_, index) => {
                         return <span style={{

@@ -1,6 +1,5 @@
-import { useRef } from "react"
 import { NavLink } from "react-router-dom"
-import headerLogo from "../../assets/header-logo.png"
+import headerLogo from "/header-logo.png"
 
 const Logo = () => {
   return <NavLink to={'/'} className="flex items-center"

@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { NavLink } from "react-router-dom"
-import headerLogo from "../../assets/header-logo.png"
+import headerLogo from "/header-logo.png"
 import "./style.less"  
 
 const Links = [

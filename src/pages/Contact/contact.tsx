@@ -1,6 +1,6 @@
 import WebFooter from '../../components/WebFooter';
 import WebHeader from '../../components/WebHeader';
-import contactLogo from "../../assets/contact_logo.png"
+import contactLogo from "/contact_logo.png"
 import { EnvelopesimpleIcon } from './EnvelopesimpleIcon';
 import { InstagramlogoIcon } from './InstagramlogoIcon';
 import { PhoneIcon } from './phoneIcon';
