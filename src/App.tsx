@@ -1,8 +1,9 @@
 import type { FC } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { HomePage } from './pages/HomePage';
+import { HomePage } from './pages/Home/HomePage';
 import "animate.css/animate.min.css";
 import './global.less';
+import 'react-slideshow-image/dist/styles.css';
 import About from './pages/About/about';
 import Contact from './pages/Contact/contact';
 import Service from './pages/service/service';

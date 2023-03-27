@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef, useState } from 'react';
+import { memo, ReactNode, useEffect, useRef, useState } from 'react';
 import type { FC } from 'react';
 import { Icon } from './Icon';
 import { Icon2 } from './Icon2';
@@ -17,7 +17,7 @@ const colors = {
 
 const stepCount = 40
 
-export const BackgroundAnimation: FC = memo(function () {
+export const BackgroundAnimation = memo(function ({ children,iconAnimationEnd, setIconAnimationEnd }: { children: ReactNode,iconAnimationEnd:boolean,setIconAnimationEnd:Function }) {
   const [iconRect, setIconRect] = useState<{ width: number, height: number }>({ width: 1152, height: 332 })
   const boxRef = useRef<HTMLDivElement>(null)
   const size = useSize(boxRef);
@@ -31,7 +31,14 @@ export const BackgroundAnimation: FC = memo(function () {
     setIconRect({ width: iconWidth, height: iconHeight })
   }, [size])
 
+  const onIconAnimationEnd = () => {
+    setIconAnimationEnd(true)
+  }
+
   const onbgClick = () => {
+    if(iconAnimationEnd){
+      return
+    }
     const bg = document.querySelector('.wallpapersden')
     if (bg) {
       bg.classList.add('animation')
@@ -70,7 +77,7 @@ export const BackgroundAnimation: FC = memo(function () {
   }, [])
   const count = useRef(0)
   const onAnimationEnd = () => {
-    if(count.current >= 1) {
+    if (count.current >= 1) {
       return
     }
     changeColors()
@@ -84,6 +91,9 @@ export const BackgroundAnimation: FC = memo(function () {
       icon3.classList.add('animation')
     }
   }
+
+  const [isSvgEnd, setIsSvgEnd] = useState(false)
+
   const changeColors = () => {
     let currentCount = 0
     const timer = setInterval(() => {
@@ -91,9 +101,10 @@ export const BackgroundAnimation: FC = memo(function () {
         clearInterval(timer)
         return
       }
-      if(currentCount === 10){
+      if (currentCount === 10) {
         const bg = document.querySelector('.wallpapersden')
         if (bg) {
+          setIsSvgEnd(true)
           bg.classList.remove('animation')
           bg.classList.add('animation_opacity')
         }
@@ -103,10 +114,7 @@ export const BackgroundAnimation: FC = memo(function () {
       currentCount += 1
     }, 900 / stepCount)
   }
-  const [iconAnimationEnd,setIconAnimationEnd] = useState(false)
-  const onIconAnimationEnd = ()=>{
-    setIconAnimationEnd(true)
-  }
+  
 
   return (
     <div className={`backgroundAnimation`}
@@ -120,45 +128,50 @@ export const BackgroundAnimation: FC = memo(function () {
     >
       <div className={'h-full'} ref={boxRef}>
         {
-          iconAnimationEnd ?  null : 
-          <>
-          <div id="icon1_box" className={'icon1_box'}
-          style={{
-            width: iconRect.width,
-            height: iconRect.height,
-          }}
-          onAnimationEnd={onIconAnimationEnd}
-        >
-          <Icon className={'icon1'} />
-        </div>
-        <div id="icon2_box" className={'icon2_box'}
-          style={{
-            width: iconRect.width / 2,
-            height: iconRect.height * 3,
-          }}
-        >
-          <Icon2 className={'icon2'} />
-        </div>
-        <div id="icon3_box" className={'icon3_box'}
-          style={{
-            width: iconRect.width / 2,
-            height: iconRect.height * 3,
-          }}>
-          <Icon3 className={'icon3'} />
-        </div>
-          </>
+          iconAnimationEnd ? null :
+            <>
+              <div id="icon1_box" className={'icon1_box'}
+                style={{
+                  width: iconRect.width,
+                  height: iconRect.height,
+                }}
+                onAnimationEnd={onIconAnimationEnd}
+              >
+                <Icon className={'icon1'} />
+              </div>
+              <div id="icon2_box" className={'icon2_box'}
+                style={{
+                  width: iconRect.width / 2,
+                  height: iconRect.height * 3,
+                }}
+              >
+                <Icon2 className={'icon2'} />
+              </div>
+              <div id="icon3_box" className={'icon3_box'}
+                style={{
+                  width: iconRect.width / 2,
+                  height: iconRect.height * 3,
+                }}>
+                <Icon3 className={'icon3'} />
+              </div>
+            </>
         }
         <div className={`wallpapersden h-full`} onClick={onbgClick}
           style={{
-            backgroundPosition: `center ${size ? size.height * 74 / 1000 : 0}px`,
+            backgroundPosition: !isSvgEnd ? `center ${size ? size.height * 74 / 1000 : 0}px` : 'center 0px',
             WebkitMaskPosition: `center ${size ? size.height * 74 / 1000 : 0}px`,
             WebkitMaskSize: (826 * iconRect.width / 1152) + "px " + (826 * iconRect.width / 1152 * 0.8656) + "px",
           } as React.CSSProperties}
           onAnimationEnd={onAnimationEnd}
         >
-          {
-            
-          }
+          {/* {
+            iconAnimationEnd
+            ? children
+            : null
+          } */}
+          <div style={{ opacity: iconAnimationEnd ? 1 : 0 }} className={"h-full transition-opacity"}>
+            {children}
+          </div>
         </div>
       </div>
     </div>
