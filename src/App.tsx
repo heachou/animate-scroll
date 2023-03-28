@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { HomePage } from './pages/Home/HomePage';
 import "animate.css/animate.min.css";
 import './global.less';
@@ -20,5 +20,5 @@ const Routing: FC = (): JSX.Element =>
     <Route path='/about' element={<About />}/>
     <Route path="/home" element={<HomePage />} />
     {/* 重定向到首页 */}
-    <Route path="*" element={<HomePage />} />
+    <Route path="*" element={<Navigate to="/home" replace />} />
   </Routes>;

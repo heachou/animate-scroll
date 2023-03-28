@@ -61,12 +61,12 @@ const Service = () => {
               </AnimationOnScroll>
             </div>
           </div>
-          <div className="md:py-[250px] md:px-[200px]">
+          <div className="md:py-[250px] xl:px-[150px] 2xl:px-[200px]">
             <AnimationOnScroll animateIn="animate__fadeIn" animateOnce>
               <h3 className="text-white text-[36px] font-bold md:font-normal  md:text-[64px] text-center mb-5 md:mb-12">Our Services</h3>
             </AnimationOnScroll>
             <AnimationOnScroll animateIn="animate__fadeIn" animateOnce>
-              <div className="px-3 md:px-0 grid grid-cols-2 md:grid-cols-3 gap-x-[10px] md:gap-x-28 gap-y-5 md:gap-y-12">
+              <div className="px-3 md:px-0 grid grid-cols-2 xl:grid-cols-3 gap-x-[10px] xl:gap-x-10 2xl:gap-x-28 gap-y-5 md:gap-y-12">
                 {
                   serviceGrids.map((item, index) => {
                     return <div className="flex flex-col justify-center py-5 md:py-28 text-fff px-5 border border-[#19EFFD] bg-black bg-opacity-50 border-[5px] hover:bg-fff hover:border-fff hover:text-black hover:bg-fff hover:bg-opacity-100 rounded-[25px] transition-colors" key={index}>

@@ -119,3 +119,84 @@
     background-size: cover;
   }
 }
+
+@keyframes wallpapersdenOpacity {
+  0% {
+    background-image: url('/svg/fadeIn.svg');
+    -webkit-mask-image: none;
+  }
+  50% {
+    background-image: url('/svg/fadeIn.svg');
+    -webkit-mask-image: none;
+  }
+  100% {
+    background-image: url('/wallpapersden2.jpg');
+    -webkit-mask-image: none;
+  }
+}
+
+
+@keyframes wallpapersdenOpacityMobile {
+  0% {
+    background-image: url('/svg/fadeIn.svg');
+    background-size: 100% 50%;
+    background-position: 0 180px;
+    -webkit-mask-image: none;
+  }
+  50% {
+    background-image: url('/svg/fadeIn.svg');
+    background-size: 100% 50%;
+    background-position: 0 180px;
+    -webkit-mask-image: none;
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.5;
+    background-image: url('/svg/fadeIn.svg');
+    background-size: 100% 50%;
+    background-position: 0 180px;
+  }
+  99% {
+    opacity: 0.3;
+    background-image: url('/svg/fadeIn.svg');
+    background-size: 100% 50%;
+    background-position: 0 180px;
+  }
+  100% {
+    background-image: url('/wallpapersden2.jpg');
+    background-position:  center 0;
+    -webkit-mask-image: none;
+    opacity: 1;
+  }
+}
+
+@keyframes wallpapersden {
+  0% {
+    background-size: 100% 100%;
+  }
+  100% {
+    background-size: 190% 190%;
+  }
+}
+
+@keyframes wallpapersden_mobile {
+  0% {
+    background-size: auto 100%;
+  }
+  100% {
+    background-size: auto 100%;
+  }
+}
+
+@keyframes iconAnimation {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}

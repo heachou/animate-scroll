@@ -1,23 +1,14 @@
 import { memo, ReactNode, useEffect, useRef, useState } from 'react';
-import type { FC } from 'react';
 import { Icon } from './Icon';
 import { Icon2 } from './Icon2';
 import { Icon3 } from './Icon3';
 import { useSize } from 'ahooks';
 
-import './index.css';
-
-const colors = {
-  a: [25, 239, 253, 0.6],
-  b: [73, 175, 254, 0.24],
-  c: [151, 71, 255, 0.32],
-  d: [0, 0, 0, 0.26],
-  e: [0, 0, 0, 0.760321],
-}
+import './mobile-index.less';
 
 const stepCount = 40
 
-export const BackgroundAnimation = memo(function ({ children,iconAnimationEnd, setIconAnimationEnd }: { children: ReactNode,iconAnimationEnd:boolean,setIconAnimationEnd:Function }) {
+const MobileAnimation = memo(function ({ children,iconAnimationEnd, setIconAnimationEnd }: { children: ReactNode,iconAnimationEnd:boolean,setIconAnimationEnd:Function }) {
   const [iconRect, setIconRect] = useState<{ width: number, height: number }>({ width: 1152, height: 332 })
   const boxRef = useRef<HTMLDivElement>(null)
   const size = useSize(boxRef);
@@ -45,36 +36,7 @@ export const BackgroundAnimation = memo(function ({ children,iconAnimationEnd, s
     }
   }
 
-  const [color, setColor] = useState(colors)
-  const colorAll = useRef<any>({
-    a: [],
-    b: [],
-    c: [],
-    d: [],
-    e: [],
-  })
-
-  useEffect(() => {
-    const target = [0, 0, 0, 1]
-    const step1 = target.map((v, i) => (v - colors.a[i]) / stepCount)
-    const step2 = target.map((v, i) => (v - colors.b[i]) / stepCount)
-    const step3 = target.map((v, i) => (v - colors.c[i]) / stepCount)
-    const step4 = target.map((v, i) => (v - colors.d[i]) / stepCount)
-    const step5 = target.map((v, i) => (v - colors.e[i]) / stepCount)
-    const colorA = []
-    const colorB = []
-    const colorC = []
-    const colorD = []
-    const colorE = []
-    for (let i = 1; i < stepCount + 1; i++) {
-      colorA.push(colors.a.map((v, j) => v + step1[j] * i))
-      colorB.push(colors.b.map((v, j) => v + step2[j] * i))
-      colorC.push(colors.c.map((v, j) => v + step3[j] * i))
-      colorD.push(colors.d.map((v, j) => v + step4[j] * i))
-      colorE.push(colors.e.map((v, j) => v + step5[j] * i))
-    }
-    colorAll.current = { a: colorA, b: colorB, c: colorC, d: colorD, e: colorE }
-  }, [])
+  
   const count = useRef(0)
   const onAnimationEnd = () => {
     if (count.current >= 1) {
@@ -109,66 +71,41 @@ export const BackgroundAnimation = memo(function ({ children,iconAnimationEnd, s
           bg.classList.add('animation_opacity')
         }
       }
-      const { a, b, c, d, e } = colorAll.current
-      setColor({ a: a[currentCount], b: b[currentCount], c: c[currentCount], d: d[currentCount], e: e[currentCount] })
       currentCount += 1
     }, 900 / stepCount)
   }
   
 
   return (
-    <div className={`backgroundAnimation`}
-      style={{
-        '--color1': `rgba(${color.a.join(',')})`,
-        '--color2': `rgba(${color.b.join(',')})`,
-        '--color3': `rgba(${color.c.join(',')})`,
-        '--color4': `rgba(${color.d.join(',')})`,
-        '--color5': `rgba(${color.e.join(',')})`,
-      } as React.CSSProperties}
+    <div className={`backgroundAnimation mobile`}
     >
       <div className={'h-full'} ref={boxRef}>
         {
           iconAnimationEnd ? null :
             <>
               <div id="icon1_box" className={'icon1_box'}
-                style={{
-                  width: iconRect.width,
-                  height: iconRect.height,
-                }}
                 onAnimationEnd={onIconAnimationEnd}
               >
                 <Icon className={'icon1'} />
               </div>
               <div id="icon2_box" className={'icon2_box'}
-                style={{
-                  width: iconRect.width / 2,
-                  height: iconRect.height * 3,
-                }}
               >
                 <Icon2 className={'icon2'} />
               </div>
               <div id="icon3_box" className={'icon3_box'}
-                style={{
-                  width: iconRect.width / 2,
-                  height: iconRect.height * 3,
-                }}>
+                >
                 <Icon3 className={'icon3'} />
               </div>
             </>
         }
         <div className={`wallpapersden h-full`} onClick={onbgClick}
           style={{
-            backgroundPosition: !isSvgEnd ? `center ${size ? size.height * 74 / 1000 : 0}px` : 'center 0px',
-            WebkitMaskPosition: `center ${size ? size.height * 74 / 1000 : 0}px`,
-            WebkitMaskSize: (826 * iconRect.width / 1152) + "px " + (826 * iconRect.width / 1152 * 0.8656) + "px",
+            backgroundPosition:  `center 0`,
+            WebkitMaskPosition: `center 305px`,
+            WebkitMaskSize: 'calc(60% - 40px) 204px',
           } as React.CSSProperties}
           onAnimationEnd={onAnimationEnd}
         >
-          {/* {
-            iconAnimationEnd
-            ? children
-            : null
-          } */}
           <div style={{ opacity: iconAnimationEnd ? 1 : 0 }} className={"h-full transition-opacity"}>
             {children}
           </div>
@@ -177,3 +114,6 @@ export const BackgroundAnimation = memo(function ({ children,iconAnimationEnd, s
     </div>
   );
 });
+
+
+export default MobileAnimation
