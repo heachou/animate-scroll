@@ -54,11 +54,20 @@
 .service_page {
   background: black;
   min-height: 100vh;
-
+  @media (min-width: 1024px) {
+    .service_content {
+      background: black url('/svg/service-bg-active.svg') no-repeat center center;
+      animation: 1s infinite alternate pulsebg;
+    }
+  }
+  @media (max-width: 1024px) {
+    .service_content {
+      background: black url('/svg/service_m_active.svg') no-repeat center center;
+      animation: 1s infinite alternate pulsebgMobile;
+    }
+  }
   .service_content {
-    background: black url('/svg/service-bg-active.svg') no-repeat center center;
     background-size: cover;
-    animation: 1s infinite alternate pulsebg;
   }
 
   .design,
@@ -180,6 +189,20 @@
     background-size: cover;
   }
 }
+
+
+@keyframes pulsebgMobile {
+  from {
+    background: black url('/svg/service_m_active.svg') no-repeat center center;
+    background-size: cover;
+  }
+
+  to {
+    background: black url('/svg/service_m.svg') no-repeat center center;
+    background-size: cover;
+  }
+}
+
 
 @keyframes wallpapersdenOpacity {
   0% {

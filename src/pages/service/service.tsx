@@ -33,7 +33,7 @@ const Service = () => {
   return (
     <div className="service_page">
       <div className="service_content mx-auto container overflow-hidden">
-        <WebHeader className="bg-black bg-opacity-60"></WebHeader>
+        <WebHeader className="bg-black bg-opacity-70"></WebHeader>
         <div className='pt-[90px] mb-20 md:pt-0'>
           <div className="pb-[270px] md:pb-0 md:py-[250px] md:px-[100px] md:flex md:justify-between md:items-center">
             <div className="px-5 md:px-0 flex md:gap-x-12 items-center">
@@ -42,7 +42,7 @@ const Service = () => {
                 <Box
                   style={{
                     padding: '50px 15px',
-                    background: 'rgba(0, 0, 0, 0.5)'
+                    background: 'rgba(0, 0, 0, 0.7)'
                   }}
                 >
                   <div className="text-2xl text-white">{serviceBannerContent.title}</div>
@@ -127,7 +127,7 @@ const Service = () => {
                 <Box
                   style={{
                     padding: '50px 20px',
-                    background: 'rgba(0, 0, 0, 0.5)',
+                    background: 'rgba(0, 0, 0, 0.7)',
                   }}
                 >
                   <div className="text-4xl text-white font-bold">{oneStop.title}</div>
@@ -137,7 +137,7 @@ const Service = () => {
             </div>
           </div>
         </div>
-        <WebFooter className="bg-black bg-opacity-50"
+        <WebFooter className="bg-black bg-opacity-70"
         />
       </div>
     </div>
