@@ -10,7 +10,7 @@ const Contact = (): JSX.Element => {
     <div className="contact_page">
       <WebHeader></WebHeader>
       <div className='container mx-auto contact_content flex flex-col md:flex-row items-center justify-around text-fff'>
-        <div className='flex-1 pl-[50px] md:pl-[100px] order-3 md:order-1 self-start md:self-center pb-[140px] md:pb-0'>
+        <div className='flex-1 contact_infomation pl-[50px] md:pl-[100px] order-3 md:order-1 self-start md:self-center pb-[140px] md:pb-0'>
           <div>
             <h4 className='text-xl md:text-[40px] text-[#19EFFD] font-bold'>Contact Infomation</h4>
             <div className='mt-5 text-xl md:mt-[100px] md:text-2xl text-fff'>

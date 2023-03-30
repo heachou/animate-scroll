@@ -36,3 +36,39 @@ export const oneStop = {
   title: "One-Stop Development Service",
   text: "Vertex is able to offer a wide range of services, including designing, developing, managing, and maintaining. We can provide comprehensive support for any requests you may have and even provide innovative ideas you never thought about."
 }
+
+export const designTextArr = [
+  '',
+  'D',
+  'DE',
+  'DES',
+  'DESI',
+  'DESIG',
+  'DESIGN',
+  'DESIGN',
+  'DESIGN',
+]
+
+export const developTextArr = [
+  '',
+  'D',
+  'DE',
+  'DEV',
+  'DEVE',
+  'DEVEL',
+  'DEVELO',
+  'DEVELOP',
+  'DEVELOP',
+]
+
+export const deployTextArr = [
+  '',
+  'D',
+  'DE',
+  'DEP',
+  'DEPL',
+  'DEPLO',
+  'DEPLOY',
+  'DEPLOY',
+  'DEPLOY',
+]

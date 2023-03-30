@@ -1,7 +1,7 @@
 .mobile{
   &.backgroundAnimation {
     width: 100%;
-    height: calc(100vh - 60px);
+    height: 860px;
     position: relative;
     cursor: pointer;
   }
@@ -20,8 +20,8 @@
   .icon1_box {
     position: absolute;
     left: 50%;
-    top: 300px;
-    width: 60%;
+    top: 200px;
+    width: 224px;
     transform: translateX(-50%);
     height: 75px;
     overflow: visible;
@@ -33,8 +33,8 @@
   .icon2_box {
     position: absolute;
     left: 50%;
-    top: 300px;
-    width: 30%;
+    top: 200px;
+    width: 112px;
     height: 224px;
     overflow: visible;
   }
@@ -45,9 +45,9 @@
   .icon3_box {
     position: absolute;
     left: 50%;
-    top: 300px;
+    top: 200px;
     transform: translateX(-100%);
-    width: 30%;
+    width: 112px;
     height: 224px;
     overflow: visible;
   }
@@ -70,17 +70,14 @@
   
   /* 826 715 */
   .wallpapersden {
-    background-image: url('/wallpapersden2.jpg');
+    background-image: url('/mobile_home.jpg');
     background-repeat: no-repeat;
-    background-size: auto 100%;
-    -webkit-mask-image: url('/svg/frame12.svg');
-    mask-image: url('/svg/frame12.svg'); 
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
+    background-size: auto 224px;
+    background-position: center 200px;
   }
   
   .wallpapersden.animation {
-    animation: wallpapersden_mobile 1s ease-in-out;
+    animation: wallpapersden_mobile 0.2s ease-in-out;
     animation-fill-mode: forwards;
   }
   .wallpapersden.animation_opacity {

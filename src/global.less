@@ -2,7 +2,6 @@
   .container {
     max-width: 1920px !important;
   }
-
 }
 
 .text-shadow-3xl {
@@ -13,22 +12,26 @@
 .home_page {
   min-height: 100vh;
   background-color: #000000;
-  .slide_container{
-    > div{
+
+  .slide_container {
+    >div {
       width: 100%;
       height: 100%;
     }
-    .react-slideshow-container{
+
+    .react-slideshow-container {
       width: 100%;
       height: 100%;
-      .react-slideshow-wrapper{
+
+      .react-slideshow-wrapper {
         height: 100%;
-        .images-wrap{
-          height: 100%!important;
+
+        .images-wrap {
+          height: 100% !important;
         }
       }
     }
-    
+
   }
 }
 
@@ -63,45 +66,103 @@
   .develop {
     position: relative;
     width: 100%;
-    height: 146px;
-  }
-  .design {
+    height: 54px;
+    overflow: hidden;
+
     span {
-      background: url('/svg/design.svg') no-repeat;
-      transition: opacity 0.4s ease;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      color: #19EFFD;
+      overflow: hidden;
+
+      &:nth-child(1) {
+        background: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+
+      &:nth-child(7) {
+        background: linear-gradient(180deg, #19EFFD 0%, #19EFFD 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+
+      &:nth-child(8) {
+        background: linear-gradient(90deg, rgba(25, 239, 253, 0) 0%, rgba(25, 239, 253, 0.865567) 13.02%, #19EFFD 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+
+      &:nth-child(9) {
+        background: linear-gradient(90deg, rgba(25, 239, 253, 0) 0%, rgba(25, 239, 253, 0) 26.04%, rgba(25, 239, 253, 0) 48.24%, #19EFFD 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
     }
   }
-  .develop{
-    span {
-      background: url('/svg/develop.svg') no-repeat;
+
+  @media (min-width: 768px) {
+
+    .design,
+    .deploy,
+    .develop {
+      position: relative;
+      width: 100%;
+      height: 146px;
     }
-  }
-  .deploy {
-    span {
-      background: url('/svg/deploy.svg') no-repeat;
-    }
+
+    // .design {
+    //   span {
+    //     background: url('/svg/design.svg') no-repeat;
+    //   }
+    // }
+
+    // .develop {
+    //   span {
+    //     background: url('/svg/develop.svg') no-repeat;
+    //   }
+    // }
+
+    // .deploy {
+    //   span {
+    //     background: url('/svg/deploy.svg') no-repeat;
+    //   }
+    // }
   }
 }
+
 @media (min-width: 768px) {
   .contact_content {
     aspect-ratio: 16/9;
   }
+
   .galaxy {
     width: 100%;
     background: url('/galaxy-2.png') no-repeat center 0;
     background-size: auto;
   }
 }
-.contact_page{
+
+.contact_page {
   background: black;
   min-height: 100vh;
-  .contact_content{
+
+  .contact_content {
     width: 100%;
     user-select: none;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #000000;
-    
   }
-  .logo_box{
+
+  .logo_box {
     height: 100%;
     width: 100%;
     background: radial-gradient(46.51% 21.7% at 50% 66.25%, rgba(255, 255, 255, 0.42) 13.11%, rgba(25, 239, 253, 0.16) 38.54%, rgba(151, 71, 255, 0.15) 67.85%, rgba(255, 255, 255, 0) 100%);
@@ -125,12 +186,14 @@
     background-image: url('/svg/fadeIn.svg');
     -webkit-mask-image: none;
   }
+
   50% {
     background-image: url('/svg/fadeIn.svg');
     -webkit-mask-image: none;
   }
+
   100% {
-    background-image: url('/wallpapersden2.jpg');
+    background-image: url('/wallpapersden2.png');
     -webkit-mask-image: none;
   }
 }
@@ -139,32 +202,37 @@
 @keyframes wallpapersdenOpacityMobile {
   0% {
     background-image: url('/svg/fadeIn.svg');
-    background-size: 100% 50%;
-    background-position: 0 180px;
+    background-size: auto 224px;
+    background-position: 0 200px;
     -webkit-mask-image: none;
   }
+
   50% {
     background-image: url('/svg/fadeIn.svg');
-    background-size: 100% 50%;
-    background-position: 0 180px;
+    background-size: auto 224px;
+    background-position: 0 200px;
     -webkit-mask-image: none;
     opacity: 1;
   }
+
   70% {
     opacity: 0.5;
     background-image: url('/svg/fadeIn.svg');
-    background-size: 100% 50%;
-    background-position: 0 180px;
+    background-size: auto 224px;
+    background-position: 0 200px;
   }
+
   99% {
     opacity: 0.3;
     background-image: url('/svg/fadeIn.svg');
-    background-size: 100% 50%;
-    background-position: 0 180px;
+    background-size: auto 224px;
+    background-position: 0 200px;
   }
+
   100% {
-    background-image: url('/wallpapersden2.jpg');
-    background-position:  center 0;
+    background-image: url('/wallpapersden2.png');
+    background-position: center 0;
+    background-size: auto 100%;
     -webkit-mask-image: none;
     opacity: 1;
   }
@@ -174,6 +242,7 @@
   0% {
     background-size: 100% 100%;
   }
+
   100% {
     background-size: 190% 190%;
   }
@@ -181,10 +250,11 @@
 
 @keyframes wallpapersden_mobile {
   0% {
-    background-size: auto 100%;
+    background-size: auto 224px;
   }
+
   100% {
-    background-size: auto 100%;
+    background-size: auto 224px;
   }
 }
 
@@ -192,9 +262,11 @@
   0% {
     opacity: 1;
   }
+
   70% {
     opacity: 0;
   }
+
   100% {
     opacity: 0;
     display: none;

@@ -92,6 +92,7 @@ const BackgroundAnimation = memo(function ({ children,iconAnimationEnd, setIconA
   }
 
   const [isSvgEnd, setIsSvgEnd] = useState(false)
+  const [showSlide,setShowSlide] = useState(false)
 
   const changeColors = () => {
     let currentCount = 0
@@ -106,6 +107,9 @@ const BackgroundAnimation = memo(function ({ children,iconAnimationEnd, setIconA
           setIsSvgEnd(true)
           bg.classList.remove('animation')
           bg.classList.add('animation_opacity')
+          setTimeout(()=>{
+            setShowSlide(true)
+          },600)
         }
       }
       const { a, b, c, d, e } = colorAll.current
@@ -168,7 +172,7 @@ const BackgroundAnimation = memo(function ({ children,iconAnimationEnd, setIconA
             ? children
             : null
           } */}
-          <div style={{ opacity: iconAnimationEnd ? 1 : 0 }} className={"h-full transition-opacity"}>
+          <div style={{ opacity: showSlide ? 1 : 0 }} className={"h-full"}>
             {children}
           </div>
         </div>

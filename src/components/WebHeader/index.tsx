@@ -43,7 +43,7 @@ const WebHeader = ({className}:{className?:string}) => {
           {
             Links.map((link, index) => {
               return <li key={index} >
-                <NavLink to={link.path} className="py-1 text-primary text-base border border-transparent px-4 link hover:rounded-full hover:border hover:border-primary">
+                <NavLink to={link.path} className="py-1 text-primary text-base border border-transparent px-4 link hover:text-white">
                   <span>{link.name}</span>
                 </NavLink>
               </li>

@@ -19,19 +19,25 @@ const Block = ({ title, text, style }: { title: string, text: ReactNode, style?:
 const About = () => {
   return (
     <div className="about_page">
-      <WebHeader></WebHeader>
+      <WebHeader className="md:hidden"></WebHeader>
       <div className='bg-black'>
-        <div className="hidden md:block banner_box mx-auto container overflow-hidden">
-          <div className=" flex h-full items-center">
-            <AnimationOnScroll animateIn="animate__slideInLeft" duration={0.7} offset={300}>
-              <div className="text-fff pl-20 md:max-w-[480px]">
-                <h2 className="text-2xl font-bold text-shadow-3xl">{aboutBannerContent.title}</h2>
-                <h4 className="text-3xl font-bold text-shadow-3xl mt-5">{aboutBannerContent.subTitle}</h4>
-                <div className="mt-5 text-[20px] leading-6 text-shadow-xl">{aboutBannerContent.text}</div>
-              </div>
-            </AnimationOnScroll>
+        <div className="mx-auto relative container">
+          <div className="hidden md:block absolute left-0 top-0">
+            <WebHeader></WebHeader>
+          </div>
+          <div className="hidden md:block banner_box overflow-hidden">
+            <div className=" flex h-full items-center">
+              <AnimationOnScroll animateIn="animate__slideInLeft" duration={0.7} offset={300}>
+                <div className="text-fff pl-20 md:max-w-[480px]">
+                  <h2 className="text-2xl font-bold text-shadow-3xl">{aboutBannerContent.title}</h2>
+                  <h4 className="text-3xl font-bold text-shadow-3xl mt-5">{aboutBannerContent.subTitle}</h4>
+                  <div className="mt-5 text-[20px] leading-6 text-shadow-xl">{aboutBannerContent.text}</div>
+                </div>
+              </AnimationOnScroll>
+            </div>
           </div>
         </div>
+
         <div className='mx-auto container galaxy overflow-hidden'>
           <AnimationOnScroll animateIn="animate__fadeIn">
             <div className="h-screen flex justify-center flex-col px-5 md:hidden text-fff">
@@ -100,7 +106,7 @@ const About = () => {
               >
                 <Block title={''} text={<>
                   <div className="w-full bg-black bg-opacity-0" style={{
-                     maxWidth: '100%',
+                    maxWidth: '100%',
                     aspectRatio: 1.47,
                   }}></div>
                 </>} style={{

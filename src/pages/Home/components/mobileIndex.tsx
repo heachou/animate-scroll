@@ -1,7 +1,4 @@
 import { memo, ReactNode, useEffect, useRef, useState } from 'react';
-import { Icon } from './Icon';
-import { Icon2 } from './Icon2';
-import { Icon3 } from './Icon3';
 import { useSize } from 'ahooks';
 
 import './mobile-index.less';
@@ -22,9 +19,6 @@ const MobileAnimation = memo(function ({ children,iconAnimationEnd, setIconAnima
     setIconRect({ width: iconWidth, height: iconHeight })
   }, [size])
 
-  const onIconAnimationEnd = () => {
-    setIconAnimationEnd(true)
-  }
 
   const onbgClick = () => {
     if(iconAnimationEnd){
@@ -44,14 +38,6 @@ const MobileAnimation = memo(function ({ children,iconAnimationEnd, setIconAnima
     }
     changeColors()
     count.current += 1
-    const icon1 = document.querySelector('#icon1_box')
-    const icon2 = document.querySelector('#icon2_box')
-    const icon3 = document.querySelector('#icon3_box')
-    if (icon1 && icon2 && icon3) {
-      icon1.classList.add('animation')
-      icon2.classList.add('animation')
-      icon3.classList.add('animation')
-    }
   }
 
   const [isSvgEnd, setIsSvgEnd] = useState(false)
@@ -71,39 +57,18 @@ const MobileAnimation = memo(function ({ children,iconAnimationEnd, setIconAnima
           bg.classList.add('animation_opacity')
         }
       }
+      if(currentCount === stepCount - 1){
+        setIconAnimationEnd(true)
+      }
       currentCount += 1
     }, 900 / stepCount)
   }
   
-
   return (
     <div className={`backgroundAnimation mobile`}
     >
-      <div className={'h-full'} ref={boxRef}>
-        {
-          iconAnimationEnd ? null :
-            <>
-              <div id="icon1_box" className={'icon1_box'}
-                onAnimationEnd={onIconAnimationEnd}
-              >
-                <Icon className={'icon1'} />
-              </div>
-              <div id="icon2_box" className={'icon2_box'}
-              >
-                <Icon2 className={'icon2'} />
-              </div>
-              <div id="icon3_box" className={'icon3_box'}
-                >
-                <Icon3 className={'icon3'} />
-              </div>
-            </>
-        }
-        <div className={`wallpapersden h-full`} onClick={onbgClick}
-          style={{
-            backgroundPosition:  `center 0`,
-            WebkitMaskPosition: `center 305px`,
-            WebkitMaskSize: 'calc(60% - 40px) 204px',
-          } as React.CSSProperties}
+      <div className={'h-full bg-black'} ref={boxRef}>
+        <div className={`wallpapersden h-full pb-16`} onClick={onbgClick}
           onAnimationEnd={onAnimationEnd}
         >
           <div style={{ opacity: iconAnimationEnd ? 1 : 0 }} className={"h-full transition-opacity"}>

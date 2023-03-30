@@ -70,13 +70,13 @@ export const HomePage = (): JSX.Element => {
               </Suspense>
               : <div className='flex justify-center items-center'
                 style={{
-                  minHeight: 'calc(100vh - 60px)',
+                  minHeight: '100vh',
                 }}
               >
                 <Suspense fallback={<Loading />}>
                   <MobileAnimation iconAnimationEnd={iconAnimationEnd} setIconAnimationEnd={setIconAnimationEnd}>
                     <div className='h-full flex items-center flex-col'>
-                      <img src={contactLogo} alt="" width={"50%"} className='mt-30' />
+                      <img src={contactLogo} alt="" width={"50%"} className='mt-20' />
                       <div className='px-[30px] w-full mt-5 text-white select-none'>
                         <div className={`bg-black bg-opacity-80 rounded-[15px] p-[10px]`}
                           onClick={() => {
