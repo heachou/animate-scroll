@@ -22,7 +22,7 @@ const About = () => {
       <WebHeader className="md:hidden"></WebHeader>
       <div className='bg-black'>
         <div className="mx-auto relative container">
-          <div className="hidden md:block absolute left-0 top-0">
+          <div className="hidden md:block w-full absolute left-0 top-0">
             <WebHeader></WebHeader>
           </div>
           <div className="hidden md:block banner_box overflow-hidden">
