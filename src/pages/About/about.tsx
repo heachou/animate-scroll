@@ -37,7 +37,6 @@ const About = () => {
             </div>
           </div>
         </div>
-
         <div className='mx-auto container galaxy overflow-hidden'>
           <AnimationOnScroll animateIn="animate__fadeIn">
             <div className="h-screen flex justify-center flex-col px-5 md:hidden text-fff">

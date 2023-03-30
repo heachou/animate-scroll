@@ -128,24 +128,6 @@
       width: 100%;
       height: 146px;
     }
-
-    // .design {
-    //   span {
-    //     background: url('/svg/design.svg') no-repeat;
-    //   }
-    // }
-
-    // .develop {
-    //   span {
-    //     background: url('/svg/develop.svg') no-repeat;
-    //   }
-    // }
-
-    // .deploy {
-    //   span {
-    //     background: url('/svg/deploy.svg') no-repeat;
-    //   }
-    // }
   }
 }
 
@@ -273,11 +255,25 @@
 
 @keyframes wallpapersden_mobile {
   0% {
+    background: black;
     background-size: auto 224px;
   }
 
-  100% {
-    background-size: auto 224px;
+  50% {
+    background-size: auto 50%;
+  }
+
+  90% {
+    opacity: 0.9;
+    background: black;
+    background-size: auto 90%;
+  }
+
+  100%{
+    background-image: url('/wallpapersden2.png');
+    background-position: center 0;
+    background-size: auto 100%;
+    opacity: 1;
   }
 }
 

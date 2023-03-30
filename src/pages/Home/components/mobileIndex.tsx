@@ -24,6 +24,7 @@ const MobileAnimation = memo(function ({ children,iconAnimationEnd, setIconAnima
     if(iconAnimationEnd){
       return
     }
+    setIconAnimationEnd(true)
     const bg = document.querySelector('.wallpapersden')
     if (bg) {
       bg.classList.add('animation')
@@ -36,32 +37,35 @@ const MobileAnimation = memo(function ({ children,iconAnimationEnd, setIconAnima
     if (count.current >= 1) {
       return
     }
-    changeColors()
+    
     count.current += 1
   }
 
   const [isSvgEnd, setIsSvgEnd] = useState(false)
 
   const changeColors = () => {
-    let currentCount = 0
-    const timer = setInterval(() => {
-      if (currentCount >= stepCount) {
-        clearInterval(timer)
-        return
-      }
-      if (currentCount === 10) {
-        const bg = document.querySelector('.wallpapersden')
-        if (bg) {
-          setIsSvgEnd(true)
-          bg.classList.remove('animation')
-          bg.classList.add('animation_opacity')
-        }
-      }
-      if(currentCount === stepCount - 1){
-        setIconAnimationEnd(true)
-      }
-      currentCount += 1
-    }, 900 / stepCount)
+    // let currentCount = 0
+    // const timer = setInterval(() => {
+    //   if (currentCount >= stepCount) {
+    //     clearInterval(timer)
+    //     return
+    //   }
+    //   if (currentCount === 10) {
+
+    //     setIconAnimationEnd(true)
+    //     const bg = document.querySelector('.wallpapersden')
+    //     if (bg) {
+    //       setIsSvgEnd(true)
+    //       setIconAnimationEnd(true)
+    //       // bg.classList.remove('animation')
+    //       // bg.classList.add('animation_opacity')
+    //     }
+    //   }
+    //   // if(currentCount === stepCount - 1){
+    //   //   setIconAnimationEnd(true)
+    //   // }
+    //   currentCount += 1
+    // }, 900 / stepCount)
   }
   
   return (
@@ -71,7 +75,7 @@ const MobileAnimation = memo(function ({ children,iconAnimationEnd, setIconAnima
         <div className={`wallpapersden h-full pb-16`} onClick={onbgClick}
           onAnimationEnd={onAnimationEnd}
         >
-          <div style={{ opacity: iconAnimationEnd ? 1 : 0 }} className={"h-full transition-opacity"}>
+          <div style={{ opacity: iconAnimationEnd ? 1 : 0 }} className={"h-full"}>
             {children}
           </div>
         </div>
